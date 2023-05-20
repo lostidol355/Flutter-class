@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_ui_clone/widgets/story_circle.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,39 +45,50 @@ class HomeScreen extends StatelessWidget {
 
           // story circle row
 
-          Row(
-            children: [
-              Column(
-                children: [
-                  Stack(
-                    children: [
-                      Container(
-                        height: 70,
-                        width: 70,
-                        child: CircleAvatar(
-                          backgroundImage: NetworkImage(
-                              "https://w7.pngwing.com/pngs/502/150/png-transparent-havanese-dog-pet-sitting-labrador-retriever-puppy-cat-pet-dog-animals-carnivoran-pet.png"),
-                        ),
-                      ),
-                      const Positioned(
-                        bottom: 1,
-                        right: 1,
-                        child: CircleAvatar(
-                          radius: 10,
-                          backgroundColor: Colors.blue,
-                          child: Icon(
-                            Icons.add,
-                            size: 15,
-                            color: Colors.white,
+          Container(
+            height: 120,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Column(
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          height: 70,
+                          width: 70,
+                          child: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                "https://static.businessinsider.com/image/5484d9d1eab8ea3017b17e29/image.jpg"),
                           ),
                         ),
-                      )
-                    ],
-                  ),
-                  Text("Ruffles")
-                ],
-              )
-            ],
+                        const Positioned(
+                          bottom: 1,
+                          right: 1,
+                          child: CircleAvatar(
+                            radius: 10,
+                            backgroundColor: Colors.blue,
+                            child: Icon(
+                              Icons.add,
+                              size: 15,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Text("Ruffles")
+                  ],
+                ),
+                StoryCircle(),
+                StoryCircle(),
+                StoryCircle(),
+                StoryCircle(),
+                StoryCircle(),
+                StoryCircle(),
+                StoryCircle(),
+              ],
+            ),
           )
           //  instagram post
           // react/comment wala row
